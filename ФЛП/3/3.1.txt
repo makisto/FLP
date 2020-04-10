@@ -1,0 +1,10 @@
+(defun sub (a b)
+	(cond 
+		((null a) t)
+        ((member (car a) b) (sub (cdr a) b))
+	)
+)
+
+(trace sub)
+
+(sub '(a b o x) '(a b c v x z y)) 

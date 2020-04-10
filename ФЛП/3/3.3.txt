@@ -1,0 +1,14 @@
+(defun insert (l func)
+	(cond 
+		((null l) nil)
+		((funcall func (car l)) (cons '* (cons (car l) (insert (cdr l) func v))))
+		((cons (car l) (insert (cdr l) func v)))
+	)
+)
+
+(trace insert)
+
+(insert '(1 2 3 4 5 6 7 8 9) 'evenp)
+
+;'evenp
+;#'(lambda (num) (>= num 0)) 

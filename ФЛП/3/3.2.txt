@@ -1,0 +1,12 @@
+(defun diff (a b)
+    (cond
+        ((null a) nil)
+        ((null b) a)
+        ((member (car a) b) (diff (cdr a) b))
+		((cons (car a) (diff (cdr a) b)))
+	)
+)
+
+(trace diff)
+
+(diff '(a v y z) '(a c g f v x z y)) 
